@@ -33,10 +33,10 @@ void save_time(FILE *f, const char *operation, double real, double user, double 
 
 int main(int argc, char* argv[]) {
 
-    int save_raport = 0;  // chenge to 1 if you want to save report
+    int save_raport = 1;  // chenge to 1 if you want to save report
 
-    if(argc < 5){
-        printf("No enough arguments provided, you should at least pass merge_files files number and file names.\n");
+    if(argc < 3){
+        printf("No enough arguments provided, you should at least create table.\n");
         return -1;
     }
 
@@ -50,14 +50,29 @@ int main(int argc, char* argv[]) {
     if(save_raport == 1)
         result_ptr = fopen("raport2.txt", "a"); 
     
-
-    const char *operation;
+    int buf_len = 40;
+    char *operation = calloc(40, sizeof(char));
     int operation_size;
     struct table* table = NULL;
 
     for(int i=1; i<argc; ++i){
         real_start_time = times(start_time);
-        if(strcmp(argv[i], "merge_files") == 0){
+        if(strcmp(argv[i], "create_table") == 0){
+            if(!isdigit(*argv[i+1])){
+                printf("num of blocks needed, but got: %s\n",argv[i+1]);
+                return -1;
+            }
+            int num_blocks = atoi(argv[++i]);
+            table = create_table(num_blocks);
+            printf("created table of size %i\n", num_blocks);
+            strcpy(operation, "create table");
+
+            operation_size = 2*num_blocks;
+
+            if(save_raport == 1)
+                save_header(result_ptr, operation_size);
+        }
+        else if(strcmp(argv[i], "merge_files") == 0){
             if(!isdigit(*argv[i+1])){
                 printf("num of files needed, but got: %s\n",argv[i+1]);
                 return -1;
@@ -67,20 +82,20 @@ int main(int argc, char* argv[]) {
                 printf("Number of files has to be even.\n");
                 return -1;
             }
+            if(num_files/2 > table->size){
+                printf("Created table is not big enough to merge so many files.\n");
+                return -1;
+            }
 
-            char** files_list[num_files];
+            char** files_list = calloc(num_files, sizeof(char *));
             int j = 0;
             while(j < num_files)
-                files_list[j++] = &argv[++i];
+                files_list[j++] = argv[++i];
             
             printf("Trying to merge %i files\n", num_files);
-            table = merge_files(num_files, *files_list);
+            merge_files(num_files, files_list, table);
             printf("Finished merging\n");
-            operation = "merge files and save blocks";
-            operation_size = num_files;
-
-            if(save_raport == 1)
-                save_header(result_ptr, operation_size);
+            strcpy(operation, "merge files and save blocks");
         }
         else if(strcmp(argv[i], "remove_block") == 0){
             if(table == NULL){
@@ -95,7 +110,7 @@ int main(int argc, char* argv[]) {
             printf("Will try to remove block of idx: %i\n", block_idx);
             remove_block(table, block_idx);
             printf("Block removed\n");
-            operation = "remove block";
+            strcpy(operation, "remove block");
         }
         else if(strcmp(argv[i], "remove_row") == 0){
             if(table == NULL){
@@ -111,7 +126,7 @@ int main(int argc, char* argv[]) {
             printf("Will try to remove row %i from block %i\n", row_idx, block_idx);
             remove_row(table, block_idx, row_idx);
             printf("Row removed\n");
-            operation = "remove row";
+            strcpy(operation, "remove row");
         }
         else if(strcmp(argv[i], "print_files") == 0){
             if(table == NULL){
@@ -132,6 +147,22 @@ int main(int argc, char* argv[]) {
             int block_idx = atoi(argv[++i]);
             print_block(table, block_idx);
         }
+        else if(strcmp(argv[i], "remove_and_add") == 0){
+            if(table == NULL){
+                printf("Before removing rows you have to merge some files, son...\n");
+                return -1;
+            }
+            if(table->num_blocks == 0){
+                printf("Before removing rows you have to merge some files, son...\n");
+                return -1;
+            }
+            for(int i=0; i < 15; i++){
+                remove_block(table, 0);
+                struct block* block = create_block("merged_0.txt");
+                add_block(table, block);
+            }
+            strcpy(operation, "remove and add block 15 times");
+        }
         real_end_time = times(end_time);
         double real = calculate_time(real_start_time,real_end_time);
         double user = calculate_time(start_time->tms_cutime,end_time->tms_cutime);
@@ -142,6 +173,10 @@ int main(int argc, char* argv[]) {
             save_time(result_ptr, operation, real, user, system);
 
     }
+    clear(table);
+    free(operation);
+    free(start_time);
+    free(end_time);
     if(save_raport == 1)
         fclose(result_ptr);
     

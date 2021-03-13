@@ -15,9 +15,9 @@ shared:
 
 zad2:
 	$(CC) library.c main.c -o main
-	./main merge_files 4 a.txt b.txt a.txt b.txt remove_block 1 remove_row 1 5 
-	./main merge_files 10 aa.txt bb.txt aa.txt bb.txt aa.txt bb.txt aa.txt bb.txt aa.txt bb.txt remove_block 1 remove_row 1 5
-	./main merge_files 16 aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt remove_block 1 remove_row 1 5
+	./main create_table 2 merge_files 4 a.txt b.txt a.txt b.txt remove_block 1 remove_row 1 5 remove_and_add 
+	./main create_table 5 merge_files 10 aa.txt bb.txt aa.txt bb.txt aa.txt bb.txt aa.txt bb.txt aa.txt bb.txt remove_block 1 remove_row 1 5 remove_and_add 
+	./main create_table 8 merge_files 16 aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt aaa.txt bbb.txt remove_block 1 remove_row 1 5 remove_and_add 
 	make clean
 
 clean:

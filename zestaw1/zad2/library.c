@@ -12,41 +12,70 @@ struct table* create_table(int num_blocks){
     struct table *table = (struct table *)calloc(1, sizeof(struct table));
 
     table->size = num_blocks;
-    table->num_blocks = num_blocks;
+    table->num_blocks = 0;
     struct block **blocks = (struct block **) calloc(num_blocks, sizeof(struct block *));
     table->blocks = blocks;
 
     return table;
 }
 
-struct block* create_block(int num_lines, int idx){
-    if(num_lines <= 0 || idx < 0){
-        return NULL;
+struct block* create_block(char* file_name){
+    FILE *merged = fopen(file_name, "r");
+    if(merged == NULL){
+        perror("Error ");
+        exit(EXIT_FAILURE);
     }
-
+    int bufforLen = 255;
+    char buffor[bufforLen];
     struct block *block = (struct block *)calloc(1, sizeof(struct block));
+    int num_lines = 0;
+    
 
+    while(fgets(buffor, bufforLen, merged))
+        num_lines++;
+    
     block->size = num_lines;
     block->num_lines = num_lines;
-    block->idx = idx;
+    block->idx = -1;
     char **lines = (char **) calloc(num_lines, sizeof(char *));
     block->lines = lines;
+
+    for (int j  = 0; j < block->size; ++j) {
+        block->lines[j] = (char *)calloc(1, bufforLen);
+    }
+
+    rewind(merged);
+    int line_idx = 0;
+    while(fgets(block->lines[line_idx], bufforLen, merged)){
+        block->lines[line_idx][strlen(block->lines[line_idx]) - 1] = '\0';
+        line_idx++;
+    }
+
+    fclose(merged);
 
     return block;
 }
 
 
-struct table* merge_files(int num_files, char** files_list){
+void merge_files(int num_files, char** files_list, struct table* table){
     if(num_files % 2 != 0 || num_files < 2){
         printf("Uneven number of files.\n");
         exit(EXIT_FAILURE);
     }
+    if(num_files/2 > table->size){
+        printf("Table is not big anough to merge so many files.\n");
+        exit(EXIT_FAILURE);
+    }
     
     int bufferLen = 255;
-    struct table *table = create_table(num_files/2);
+    // struct table* table = create_table(num_files/2);
+    // for(int i=0; i < table->size; i++){
+    //     table->blocks[i] = (struct block* )malloc(sizeof(struct block));
+    // }
     
 
-// iteracja po wszystkich plikach
+
+    // iteracja po wszystkich plikach
     for (int i = 0; i < num_files; i+= 2){
         char *fileA = files_list[i];
         char *fileB = files_list[i+1];
@@ -64,7 +93,7 @@ struct table* merge_files(int num_files, char** files_list){
             exit(EXIT_FAILURE);
         }
 
-// przepisywanie wierszy do pliku tymczasowego
+    // przepisywanie wierszy do pliku tymczasowego
         int num_lines = 0;
         while(fgets(bufferA, bufferLen, aPtr) && fgets(bufferB, bufferLen, bPtr)){
             fputs(bufferA, destPtr);
@@ -76,24 +105,13 @@ struct table* merge_files(int num_files, char** files_list){
         fclose(bPtr);
         fclose(destPtr);
 
-//  Zapisanie wierszy pliku tymczasowego do bloku
-        FILE *merged = fopen(destName, "r");
-        struct block *block = create_block(num_lines, i/2);
-        for (int j  = 0; j < block->size; ++j) {
-            block->lines[j] = (char *)calloc(1, bufferLen);
-        }
 
-        int line_idx = 0;
-        while(fgets(block->lines[line_idx], bufferLen, merged)){
-            block->lines[line_idx][strlen(block->lines[line_idx]) - 1] = '\0';
-            line_idx++;
-        }
-
-        fclose(merged);
-       
+    //  Zapisanie wierszy pliku tymczasowego do bloku
+        struct block *block = create_block(destName);
+        block->idx = i/2;
         table->blocks[i/2] = block;
+        table->num_blocks += 1;
     }
-    return table;
 }
 
 void remove_block(struct table* table, int idx){
@@ -103,9 +121,27 @@ void remove_block(struct table* table, int idx){
         exit(EXIT_FAILURE);
     }
 
+    for(int i=0; i < table->blocks[idx]->size; i++)
+        free(table->blocks[idx]->lines[i]);
+    
     free(table->blocks[idx]);
     table->blocks[idx] = NULL;
     table->num_blocks -= 1;
+}
+
+void add_block(struct table* table, struct block* block){
+    if(table->size == table->num_blocks){
+        printf("Table is full, unable to add block.");
+        return;
+    }
+
+    int i=0;
+    while(i < table->size && table->blocks[i] != NULL)
+        i++;
+    
+    table->blocks[i] = block;
+    table->num_blocks += 1;
+    block->idx = i;
 }
 
 void remove_row(struct table* table, int block_idx, int row_idx){
@@ -149,5 +185,14 @@ void print_files(struct table* table){
     for(int i=0;  i < table->size; i++){
         if(table->blocks[i] != NULL)
             print_block(table, i);
+    }
+}
+
+void clear(struct table* table){
+    for(int i=0; i < table->size; i++){
+        if(table->blocks[i] != NULL){
+            for(int l=0; l < table->blocks[i]->size; l++)
+                free(table->blocks[i]->lines[l]);
+        }
     }
 }

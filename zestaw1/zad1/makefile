@@ -13,7 +13,9 @@ shared:
 	$(CC) -fPIC $(FLAGS) -shared -o library.so library.o
 	rm -f *.o
 
+
 clean:
 	rm -f *.o
 	rm -f *.a
 	rm -f *.so
+	ls | grep 'merged.*.txt' | xargs rm -f
