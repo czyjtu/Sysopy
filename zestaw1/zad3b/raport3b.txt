@@ -1,0 +1,519 @@
+		############ OPTIMIZING: -O1#################
+		#############################################
+
+			-----STATIC LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.040000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.200000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.130000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.340000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+
+			-----SHARED LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.070000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.160000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.130000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.180000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.110000       	0.000000       	0.000000       
+
+			-----DYNAMIC LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.050000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.120000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.110000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.180000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.010000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+		############ OPTIMIZING: -O2#################
+		#############################################
+
+			-----STATIC LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.040000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.080000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.180000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+
+			-----SHARED LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.040000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.110000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.170000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+
+			-----DYNAMIC LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.050000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.100000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.080000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.150000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+		############ OPTIMIZING: -O3#################
+		#############################################
+
+			-----STATIC LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.070000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.150000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.180000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.160000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.290000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.130000       	0.000000       	0.000000       
+
+			-----SHARED LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.050000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.120000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.140000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.170000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.330000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.180000       	0.000000       	0.000000       
+
+			-----DYNAMIC LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.090000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.160000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.220000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.160000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.320000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.010000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.140000       	0.000000       	0.000000       
