@@ -6,7 +6,7 @@ create table:
 	0.000000       	0.000000       	0.000000       
 merge files and save blocks:
 	Real			User			System
-	0.020000       	0.000000       	0.000000       
+	0.010000       	0.000000       	0.000000       
 remove block:
 	Real			User			System
 	0.000000       	0.000000       	0.000000       
@@ -33,7 +33,7 @@ remove row:
 	0.000000       	0.000000       	0.000000       
 remove and add block 15 times:
 	Real			User			System
-	0.020000       	0.000000       	0.000000       
+	0.030000       	0.000000       	0.000000       
 
 		Large number of files and large number of rows
 
@@ -42,7 +42,7 @@ create table:
 	0.000000       	0.000000       	0.000000       
 merge files and save blocks:
 	Real			User			System
-	0.060000       	0.000000       	0.000000       
+	0.070000       	0.000000       	0.000000       
 remove block:
 	Real			User			System
 	0.000000       	0.000000       	0.000000       
