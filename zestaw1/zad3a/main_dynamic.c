@@ -69,7 +69,7 @@ int main(int argc, char* argv[]) {
     FILE *result_ptr;
 
     if(save_raport == 1)
-        result_ptr = fopen("raport2.txt", "a"); 
+        result_ptr = fopen("raport3a.txt", "a"); 
     
     int buf_len = 40;
     char *operation = calloc(40, sizeof(char));

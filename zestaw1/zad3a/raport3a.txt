@@ -8,7 +8,7 @@ create table:
 	0.000000       	0.000000       	0.000000       
 merge files and save blocks:
 	Real			User			System
-	0.010000       	0.000000       	0.000000       
+	0.020000       	0.000000       	0.000000       
 remove block:
 	Real			User			System
 	0.000000       	0.000000       	0.000000       
@@ -35,6 +35,63 @@ remove row:
 	0.000000       	0.000000       	0.000000       
 remove and add block 15 times:
 	Real			User			System
+	0.020000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.050000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.030000       	0.000000       	0.000000       
+
+			-----SHARED LIBRARY-----
+
+
+		Small number of files and small number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.010000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
+	0.020000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+create table:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+merge files and save blocks:
+	Real			User			System
+	0.020000       	0.000000       	0.000000       
+remove block:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove row:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+remove and add block 15 times:
+	Real			User			System
 	0.030000       	0.000000       	0.000000       
 
 		Large number of files and large number of rows
@@ -53,9 +110,9 @@ remove row:
 	0.000000       	0.000000       	0.000000       
 remove and add block 15 times:
 	Real			User			System
-	0.020000       	0.000000       	0.000000       
+	0.030000       	0.000000       	0.000000       
 
-			-----SHARED LIBRARY-----
+			-----DYNAMIC LIBRARY-----
 
 
 		Small number of files and small number of rows
@@ -110,4 +167,4 @@ remove row:
 	0.000000       	0.000000       	0.000000       
 remove and add block 15 times:
 	Real			User			System
-	0.020000       	0.000000       	0.000000       
+	0.030000       	0.000000       	0.000000       

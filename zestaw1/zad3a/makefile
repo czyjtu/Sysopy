@@ -24,10 +24,10 @@ test_static: library.a main.o
 	$(CC) main.o library.a -o test_static
 
 test_shared: main.o library.so
-	$(CC) main.o ./library.so -o test_shared
+	$(CC) -L. -Wall -Wl,-rpath=. -o test_shared main.o -lrary
 
 test_dynamic: main_dynamic.o library.so
-	$(CC) main_dynamic.o ./library.so -o test_dynamic
+	$(CC) -ldl main_dynamic.o ./library.so -ldl -o test_dynamic
 
 zad3a: test_static test_shared test_dynamic
 	echo '\t\t\t-----STATIC LIBRARY-----\n' >> raport3a.txt
@@ -49,5 +49,5 @@ clean:
 	rm -f *.o
 	rm -f *.a
 	rm -f *.so
-	rm -f test_shared test_static
+	rm -f test_shared test_static test_dynamic
 	ls | grep 'merged.*.txt' | xargs rm -f
