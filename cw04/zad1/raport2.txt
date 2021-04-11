@@ -1,0 +1,4 @@
+-Proces potomny dziedziczy ustawione handlery, maskowanie oraz ignorowanie.
+-Sygnał który oczekuje w przodku nie jest widoczny w potomku.
+-Po wykonaniu funkcji exec, dziedziczone są ustawione maski oraz ignorowanie. 
+-Oczekujące sygnały w przodku również są widoczne.

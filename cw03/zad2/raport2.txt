@@ -1,0 +1,18 @@
+
+		Small number of files and small number of rows
+
+merge files:
+	Real			User			System
+	0.000000       	0.000000       	0.000000       
+
+		Medium number of files and medium number of rows
+
+merge files:
+	Real			User			System
+	0.010000       	0.000000       	0.000000       
+
+		Large number of files and large number of rows
+
+merge files:
+	Real			User			System
+	0.010000       	0.000000       	0.000000       
